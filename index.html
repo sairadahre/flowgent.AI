@@ -361,23 +361,6 @@ button{ font-family:inherit; cursor:pointer; }
   flex-shrink:0;
 }
 
-/* ===== Stats ===== */
-.stats-section{ padding-top:100px; padding-bottom:100px; }
-.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:22px; }
-.stat-card{
-  text-align:center; padding:40px 22px; border-radius:var(--radius);
-  background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-  border:1px solid var(--border);
-  box-shadow:var(--shadow-card), var(--inner-highlight);
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
-}
-.stat-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-card-hover), var(--inner-highlight); }
-.stat-num{ font-family:var(--font-display); font-size:44px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.02em;
-  background:linear-gradient(120deg, var(--accent), var(--accent-2));
-  -webkit-background-clip:text; background-clip:text; color:transparent; }
-.stat-suffix{ font-family:var(--font-display); font-size:28px; font-weight:700; color:var(--accent-2); }
-.stat-label{ font-size:14px; color:var(--muted); margin-top:10px; line-height:1.5; }
-
 /* ===== Projects ===== */
 .projects-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:28px; margin-top:56px; }
 
@@ -444,20 +427,6 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .why-card h3{ font-family:var(--font-display); font-size:18px; font-weight:700; margin-bottom:10px; letter-spacing:-0.01em; }
 .why-card p{ font-size:14px; color:var(--muted); line-height:1.65; }
-
-/* ===== Testimonials ===== */
-.testimonials-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; margin-top:52px; }
-.testimonial-card{ padding:32px; }
-.testimonial-quote{ font-size:15px; color:var(--text); margin-bottom:20px; line-height:1.65; }
-.testimonial-author{ display:flex; align-items:center; gap:12px; font-size:13.5px; }
-.testimonial-author strong{ display:block; font-size:14px; }
-.testimonial-author span{ color:var(--muted); }
-.avatar{
-  width:38px; height:38px; border-radius:50%; flex-shrink:0;
-  display:flex; align-items:center; justify-content:center;
-  background:linear-gradient(120deg, var(--accent), var(--accent-2));
-  font-family:var(--font-mono); font-size:12px; font-weight:700; color:#04070F;
-}
 
 /* ===== FAQ ===== */
 .faq-list{ margin-top:52px; display:flex; flex-direction:column; gap:14px; max-width:760px; }
@@ -795,26 +764,6 @@ img, svg{ max-width:100%; height:auto; }
     </div>
   </div>
 </section>
-<section class="section stats-section">
-  <div class="stats-grid">
-    <div class="stat-card reveal">
-      <span class="stat-num" data-count="12">0</span><span class="stat-suffix">+</span>
-      <p class="stat-label">Agents deployed</p>
-    </div>
-    <div class="stat-card reveal">
-      <span class="stat-num" data-count="5">0</span>
-      <p class="stat-label">Industries automated</p>
-    </div>
-    <div class="stat-card reveal">
-      <span class="stat-num" data-count="100">0</span><span class="stat-suffix">+</span>
-      <p class="stat-label">Hours saved monthly, per client</p>
-    </div>
-    <div class="stat-card reveal">
-      <span class="stat-num" data-count="24">0</span><span class="stat-suffix">/7</span>
-      <p class="stat-label">Agent uptime</p>
-    </div>
-  </div>
-</section>
 
 <!-- PROJECTS -->
 <section id="work" class="section">
@@ -1042,28 +991,6 @@ img, svg{ max-width:100%; height:auto; }
       <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.9 2.9M16.9 16.9l2.9 2.9M1 12h4M19 12h4M4.2 19.8l2.9-2.9M16.9 7.1l2.9-2.9"/></svg></div>
       <h3>Ongoing support</h3>
       <p>Agents get monitored and refined after launch, not abandoned once they're live.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section testimonials-section">
-  <p class="section-eyebrow reveal">Client feedback</p>
-  <h2 class="section-title reveal">What clients are saying</h2>
-  <p class="section-sub reveal">Placeholder quotes — real testimonials will replace these as projects wrap up.</p>
-
-  <div class="testimonials-grid">
-    <div class="testimonial-card glass-panel reveal">
-      <p class="testimonial-quote">"The lead qualification agent answers inquiries faster than our team ever could, and nothing falls through the cracks anymore."</p>
-      <div class="testimonial-author"><span class="avatar">RE</span><div><strong>Placeholder Client</strong><span>Real Estate Agency</span></div></div>
-    </div>
-    <div class="testimonial-card glass-panel reveal">
-      <p class="testimonial-quote">"Our stock counts used to be wrong half the time. Now the agent keeps everything updated as we chat with it."</p>
-      <div class="testimonial-author"><span class="avatar">IN</span><div><strong>Placeholder Client</strong><span>Retail Store</span></div></div>
-    </div>
-    <div class="testimonial-card glass-panel reveal">
-      <p class="testimonial-quote">"Customers get answers instantly, even at midnight. It feels like we hired a full support shift."</p>
-      <div class="testimonial-author"><span class="avatar">EC</span><div><strong>Placeholder Client</strong><span>E-Commerce Brand</span></div></div>
     </div>
   </div>
 </section>
@@ -1341,30 +1268,6 @@ window.addEventListener('load', () => {
   targets.forEach(el => io.observe(el));
 })();
 
-// ===== Animated stat counters =====
-(function(){
-  const stats = document.querySelectorAll('.stat-num');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting){
-        const el = entry.target;
-        const target = parseInt(el.getAttribute('data-count'), 10);
-        const duration = 1400;
-        const start = performance.now();
-        function tick(now){
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(eased * target);
-          if (progress < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-        io.unobserve(el);
-      }
-    });
-  }, { threshold: 0.4 });
-  stats.forEach(el => io.observe(el));
-})();
-
 // ===== FAQ accordion =====
 (function(){
   document.querySelectorAll('.faq-item').forEach(item => {
@@ -1455,3 +1358,4 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
